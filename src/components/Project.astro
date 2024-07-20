@@ -1,0 +1,15 @@
+---
+const {
+  project: { name, description, image, stack },
+} = Astro.props;
+---
+
+<div>
+  <h3>{name}</h3>
+  <div>
+    <p>{description}</p>
+    <p>
+      Built with <span>{stack.length > 0 && stack.map((s: string) => s)}</span>
+    </p>
+  </div>
+</div>

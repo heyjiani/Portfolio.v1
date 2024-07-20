@@ -1,0 +1,57 @@
+---
+import Experience from "./Experience.astro";
+
+const experienceItems = [
+  {
+    company: "Lighthouse labs",
+    title: "Software Developer",
+    year: "May 2022 - June 2024",
+    description:
+      "Hired upon bootcamp completion as one of the top three performing graduates. <br/> Contributed to and maintained their core CRM product as the sole developer on the project - by far the company's largest codebase, working closely with a manager overseeing multiple concurrent projects. This product was built mainly in Ruby on Rails, with some JavaScript components and a PostgreSQL database. My work consisted of building out various features using API & webhook integrations, implementing event-driven architecture in our CRM to efficiently handle and process incoming data from services like Zoom, Mailchimp, and Typeform. <br>Handled all QA and functional testing, notably for the upgrade from Rails 4 to Rails 7, leading to zero outages post-deployment. <br />Co-maintained the frontend/website with a website manager, where I provided code-related guidance in their transition to RoR, as well as routine UI updates. <br />Redesigned and redeveloped several key components on the company's proprietary learning platform (Compass), from low-fidelity Figma sketches to completed UI, and received recognition for implementing a more pleasant and intuitive User Experience. <br>Mentored a junior developer, getting them accustomed to regular code reviews and issue handling through GitHub.",
+  },
+  {
+    company: "Lighthouse labs",
+    title: "Web Development Diploma",
+    year: "Jan 2022 - Apr 2022",
+    description: "Completed the Web Development bootcamp at Lighthouse Labs.",
+  },
+  {
+    company: "Stellar Creative Lab",
+    title: "Storyboard Artist",
+    year: "May 2021 - Dec 2021",
+    description:
+      "Senior-level position on a high-profile DreamWorks show. I used a combination of 2D and 3D softwares to create animation storyboards for monthly client review sessions, and incorporated feedback under tight TV production deadlines. I was commended for creating a guide to Blender, which significantly aided my team in adapting to the new software.",
+  },
+  {
+    company: "Mainframe Studios, Atomic Cartoons",
+    title: "Storyboard Artist",
+    year: "2017 - May 2021",
+    description:
+      "Promoted to senior-level artist within four months of starting at the junior level, due to fast learning ability and high adaptability to frequent style changes. Was one of the main artists on my team to lead with a transition from hand-drawn to 3D-generated backgrounds in storyboards, which resulted in a shorter production time. Notable clients include DreamWorks, Netflix, Mojang (Minecraft), Lego.",
+  },
+  {
+    company: "Titmouse Inc.",
+    title: "2D Animator, Digital Compositor",
+    year: "2014 - 2017",
+    description:
+      "Worked on various animated shows for TV and streaming services. Responsibilities included scene reviews multiple times a week, reaching out to different teams regarding animation assets, and handling client notes within very demanding time constraints.",
+  },
+  {
+    company: "Sheridan College",
+    title: "Bachelor of Applied Arts (BAA) - Animation",
+    year: "2014",
+    description: "",
+  },
+];
+---
+
+<section>
+  <h2>Experience and Education</h2>
+  {
+    experienceItems.map((exp) => (
+      <Experience company={exp.company} title={exp.title} year={exp.year}>
+        <p set:html={exp.description} />
+      </Experience>
+    ))
+  }
+</section>

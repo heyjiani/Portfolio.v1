@@ -1,0 +1,9 @@
+---
+const { company, title, year } = Astro.props;
+---
+
+<div>
+  <h3>{company} <span>{title}</span></h3>
+  <span>{year}</span>
+  <slot />
+</div>

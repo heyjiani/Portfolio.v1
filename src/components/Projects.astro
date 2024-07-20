@@ -1,3 +1,101 @@
+---
+import Project from "./Project.astro";
+
+const projects: {
+  name: string;
+  description: string;
+  image: string;
+  href: string;
+  stack: string[];
+}[] = [
+  {
+    name: "Boulder Topo - In progress",
+    description: "Developed in collaboration with a local artist/climber.",
+    image: "",
+    href: "",
+    stack: ["Astro", "TypeScript"],
+  },
+  {
+    name: "Portfolio",
+    description:
+      "The page that you're on right now, developed to gain foundational knowledge and hands-on experience with Astro and TypeScript.",
+    image: "",
+    href: "https://www.whereisjiani.com",
+    stack: ["Astro", "TypeScript", "Tailwind"],
+  },
+  {
+    name: "Kintsugi",
+    description:
+      "A minimum viable demo for a therapy scheduling app with a multi-language voice transcriber twist.",
+    image: "",
+    href: "https://github.com/heyjiani/project-kintsugi",
+    stack: ["Astro", "TypeScript"],
+  },
+  {
+    name: "Scheduler",
+    description:
+      "Simple app that lets users create, edit, and delete interview appointments.",
+    image: "",
+    href: "",
+    stack: [
+      "React",
+      "Express",
+      "PostgreSQL",
+      "Cypress",
+      "Jest",
+      "Storybook",
+      "CSS",
+      "HTML",
+    ],
+  },
+  {
+    name: "WikiMap",
+    description:
+      "Map-sharing app that uses the Google Maps API to let users pin locations of interest.",
+    image: "",
+    href: "",
+    stack: ["jQuery", "Express", "PostgreSQL", "CSS"],
+  },
+  {
+    name: "Jungle",
+    description:
+      "Intro to Ruby on Rails in the form of a challenge about adding features to an existing codebase for a simulated online retailer.",
+    image: "",
+    href: "",
+    stack: ["Ruby on Rails", "RSpec"],
+  },
+  {
+    name: "Tweeter",
+    description: "Single-page Twitter clone.",
+    image: "",
+    href: "",
+    stack: ["jQuery", "Express", "CSS"],
+  },
+];
+---
+
 <section>
   <h2>Projects</h2>
+  <!-- 
+    TinyApp
+    Tweeter
+    Map midterm
+    Scheduler
+    Jungle
+    Portfolio
+    CRM website
+  -->
+  {
+    projects.map((p) => (
+      <div>
+        <h3>{p.name}</h3>
+        <div>
+          <p>{p.description}</p>
+          <p>
+            {p.stack.length > 0 && p.stack.map((s: string) => <span>{s}</span>)}
+          </p>
+        </div>
+      </div>
+    ))
+  }
 </section>
