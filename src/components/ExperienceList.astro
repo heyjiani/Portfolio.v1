@@ -3,11 +3,11 @@ import Experience from "./Experience.astro";
 
 const experienceItems = [
   {
-    company: "Lighthouse labs",
+    company: "Lighthouse Labs",
     title: "Software Developer",
-    year: "May 2022 - June 2024",
+    year: "May 2022 - Jun 2024",
     description:
-      "Hired upon bootcamp completion as one of the top three performing graduates. <br/> Contributed to and maintained their core CRM product as the sole developer on the project - by far the company's largest codebase, working closely with a manager overseeing multiple concurrent projects. This product was built mainly in Ruby on Rails, with some JavaScript components and a PostgreSQL database. My work consisted of building out various features using API & webhook integrations, implementing event-driven architecture in our CRM to efficiently handle and process incoming data from services like Zoom, Mailchimp, and Typeform. <br>Handled all QA and functional testing, notably for the upgrade from Rails 4 to Rails 7, leading to zero outages post-deployment. <br />Co-maintained the frontend/website with a website manager, where I provided code-related guidance in their transition to RoR, as well as routine UI updates. <br />Redesigned and redeveloped several key components on the company's proprietary learning platform (Compass), from low-fidelity Figma sketches to completed UI, and received recognition for implementing a more pleasant and intuitive User Experience. <br>Mentored a junior developer, getting them accustomed to regular code reviews and issue handling through GitHub.",
+      "Hired upon bootcamp completion as one of the top three performing graduates. <br/><br/> <h4>CRM</h4>Contributed to and maintained the core CRM product as the sole developer on the project - by far the company's largest codebase. This product was built mainly in <span>Ruby on Rails</span>, with some <span>JavaScript</span> components and a <span>PostgreSQL</span> database. My work consisted of building out various features using <span>API & webhook integrations</span>, implementing event-driven architecture in our CRM to efficiently handle and process incoming data from services like Zoom, Mailchimp, and Typeform. I notably supported the upgrade from Rails 4 to Rails 7, leading to zero outages post-deployment. <br /><br />Mentored a junior developer, getting them accustomed to regular code reviews and issue handling through GitHub.<br /><br /><h4>Front-End</h4>Redesigned and redeveloped several key components on the company's proprietary learning platform (Compass), from low-fidelity Figma sketches to completed UI, and received recognition for implementing a more pleasant and intuitive User Experience. <br /><br />Co-maintained the frontend/website with a website manager, where I provided code-related guidance in their transition to RoR, as well as routine UI updates.",
   },
   {
     company: "Lighthouse labs",
@@ -45,13 +45,15 @@ const experienceItems = [
 ];
 ---
 
-<section>
+<section id="experience" class="my-10">
   <h2>Experience and Education</h2>
-  {
-    experienceItems.map((exp) => (
-      <Experience company={exp.company} title={exp.title} year={exp.year}>
-        <p set:html={exp.description} />
-      </Experience>
-    ))
-  }
+  <ul class="flex flex-col">
+    {
+      experienceItems.map((exp) => (
+        <Experience company={exp.company} title={exp.title} year={exp.year}>
+          <p set:html={exp.description} />
+        </Experience>
+      ))
+    }
+  </ul>
 </section>

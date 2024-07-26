@@ -1,14 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Hero from "../components/Hero.astro";
+import Navigation from "../components/Navigation.astro";
 import About from "../components/About.astro";
 import ExperienceList from "../components/ExperienceList.astro";
 import Projects from "../components/Projects.astro";
+import Contact from "../components/Contact.astro";
 ---
 
 <Layout>
-  <Hero />
-  <About />
-  <ExperienceList />
-  <Projects />
+  <div class="flex flex-row my-10 mx-20 justify-center">
+    <Navigation />
+    <main class="basis-2/3 my-10">
+      <About />
+      <ExperienceList />
+      <Projects />
+      <Contact />
+    </main>
+  </div>
 </Layout>

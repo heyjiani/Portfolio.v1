@@ -74,28 +74,24 @@ const projects: {
 ];
 ---
 
-<section>
+<section id="projects" class="my-10">
   <h2>Projects</h2>
-  <!-- 
-    TinyApp
-    Tweeter
-    Map midterm
-    Scheduler
-    Jungle
-    Portfolio
-    CRM website
-  -->
-  {
-    projects.map((p) => (
-      <div>
-        <h3>{p.name}</h3>
-        <div>
-          <p>{p.description}</p>
-          <p>
-            {p.stack.length > 0 && p.stack.map((s: string) => <span>{s}</span>)}
-          </p>
-        </div>
-      </div>
-    ))
-  }
+  <ul>
+    {
+      projects.map((p) => (
+        <li class="mb-10">
+          <h3>
+            <a href={p.href}>{p.name}</a>
+          </h3>
+          <div>
+            <p>{p.description}</p>
+            <p>
+              {p.stack.length > 0 &&
+                p.stack.map((s: string) => <span>{s}</span>)}
+            </p>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
 </section>

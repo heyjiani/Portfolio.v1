@@ -12,12 +12,14 @@
     <meta name="generator" content={Astro.generator} />
     <title>Jiani Cao</title>
   </head>
-  <body class="bg-zinc-600 text-zinc-100 leading-relaxed">
+  <body
+    class="leading-relaxed w-full antialiased bg-zinc-700 text-zinc-100 selection:bg-zinc-100 selection:text-zinc-700"
+  >
     <slot />
   </body>
 </html>
 <style is:global>
-  :root {
+  /* :root {
     --accent: 136, 58, 234;
     --accent-light: 224, 204, 250;
     --accent-dark: 49, 10, 101;
@@ -27,19 +29,12 @@
       rgb(var(--accent-light)) 30%,
       white 60%
     );
-  }
+  } */
   html {
     font-family: system-ui, sans-serif;
   }
-  code {
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      Liberation Mono,
-      DejaVu Sans Mono,
-      Bitstream Vera Sans Mono,
-      Courier New,
-      monospace;
+  h2 {
+    font-size: 24px;
+    margin-bottom: 1rem;
   }
 </style>
