@@ -74,21 +74,25 @@ const projects: {
 ];
 ---
 
-<section id="projects" class="my-10">
+<section id="projects" class="mt-10 mb-20">
   <h2>Projects</h2>
-  <ul>
+  <ul class="flex flex-row flex-wrap">
     {
       projects.map((p) => (
-        <li class="mb-10">
+        <li class="p-6 basis-1/2">
           <h3>
             <a href={p.href}>{p.name}</a>
           </h3>
           <div>
             <p>{p.description}</p>
-            <p>
+            <div class="flex flex-wrap space-x-1">
               {p.stack.length > 0 &&
-                p.stack.map((s: string) => <span>{s}</span>)}
-            </p>
+                p.stack.map((s: string) => (
+                  <span class="px-2 mt-1 text-sm border-solid rounded-full text-zinc-800 bg-violet-300">
+                    {s}
+                  </span>
+                ))}
+            </div>
           </div>
         </li>
       ))
