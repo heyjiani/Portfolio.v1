@@ -1,25 +1,69 @@
 ---
 import Links from "./Links.astro";
+import "@fontsource-variable/oswald";
 ---
 
-<header id="navbar" class="basis-1/4 my-10">
-  <div class="fixed">
-    <div class="mb-10">
-      <h1 class="text-5xl font-bold">Jiani Cao</h1>
-      <p>Full-Stack Developer</p>
+<header id="navbar" class="basis-1/4">
+  <div class="fixed my-10">
+    <div class="mb-14">
+      <h1 class="text-7xl font-semibold uppercase text-blue-600">Jiani Cao</h1>
+      <p class="tracking-widest text-center">Full-Stack Developer</p>
     </div>
-    <nav class="">
-      <ul class="flex flex-col justify-evenly space-y-3">
-        <li><a href="/#about">About</a></li>
-        <li>
-          <a href="/#experience">Experience & Education</a>
-        </li>
-        <li>
-          <a href="/#projects">Projects</a>
-        </li>
-        <li><a href="/#contact">Contact</a></li>
+    <nav>
+      <ul class="flex flex-col justify-evenly items-center space-y-3">
+        {
+          [
+            ["about", "/#about"],
+            ["experience", "/#experience"],
+            ["projects", "/#projects"],
+            ["contact", "/#contact"],
+          ].map(([title, url]) => (
+            <li>
+              <a
+                href={url}
+                id={`nav-link-${title}`}
+                class="text-gray-500 text-lg tracking-wide"
+              >
+                {title}
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </nav>
     <Links />
   </div>
 </header>
+
+<script>
+  const sections = document.querySelectorAll("section");
+
+  function toggleLinkState() {
+    const scrollPosition = window.scrollY + 150;
+
+    sections.forEach((s) => {
+      const navLink = document.getElementById(`nav-link-${s.id}`);
+      const inSection =
+        s.offsetTop <= scrollPosition &&
+        s.offsetHeight >= scrollPosition - s.offsetTop;
+
+      if (navLink) {
+        navLink.classList.toggle("active", inSection);
+      }
+    });
+  }
+
+  toggleLinkState();
+  window.addEventListener("scroll", toggleLinkState);
+</script>
+
+<style>
+  h1 {
+    font-family: "Oswald Variable";
+  }
+  a.active,
+  a:hover {
+    font-weight: 800;
+    color: #1f63b6;
+  }
+</style>
