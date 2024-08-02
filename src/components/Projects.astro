@@ -1,6 +1,5 @@
 ---
-import Project from "./Project.astro";
-
+import { Icon } from "astro-icon/components";
 const projects: {
   name: string;
   description: string;
@@ -10,7 +9,7 @@ const projects: {
 }[] = [
   {
     name: "Boulder Topo - In progress",
-    description: "Developed in collaboration with a local artist/climber.",
+    description: "Developed in collaboration with a local artist/climber???",
     image: "",
     href: "",
     stack: ["Astro", "TypeScript"],
@@ -35,8 +34,8 @@ const projects: {
     name: "Scheduler",
     description:
       "Simple app that lets users create, edit, and delete interview appointments.",
-    image: "",
-    href: "",
+    image: "/projects/scheduler.png",
+    href: "https://github.com/heyjiani/scheduler",
     stack: [
       "React",
       "Express",
@@ -53,7 +52,7 @@ const projects: {
     description:
       "Map-sharing app that uses the Google Maps API to let users pin locations of interest.",
     image: "",
-    href: "",
+    href: "https://github.com/heyjiani/T2_midterm",
     stack: ["jQuery", "Express", "PostgreSQL", "CSS"],
   },
   {
@@ -61,39 +60,61 @@ const projects: {
     description:
       "Intro to Ruby on Rails in the form of a challenge about adding features to an existing codebase for a simulated online retailer.",
     image: "",
-    href: "",
+    href: "https://github.com/heyjiani/jungle-rails",
     stack: ["Ruby on Rails", "RSpec"],
   },
   {
     name: "Tweeter",
     description: "Single-page Twitter clone.",
     image: "",
-    href: "",
+    href: "https://github.com/heyjiani/tweeter",
     stack: ["jQuery", "Express", "CSS"],
   },
 ];
 ---
 
-<section id="projects" class="scroll-mt-10">
-  <!-- <h2>Projects</h2> -->
-  <ul class="flex flex-row flex-wrap">
+<section id="projects" class="scroll-mt-10 pt-10">
+  <h2
+    class="mb-2 text-center text-2xl font-extrabold text-emerald-600 tracking-widest"
+  >
+    Projects
+  </h2>
+  <ul class="divide-y divide-dashed divide-blue-600">
     {
       projects.map((p) => (
-        <li class="p-6 basis-1/2">
-          <h3>
-            <a href={p.href}>{p.name}</a>
-          </h3>
-          <div>
-            <p>{p.description}</p>
-            <div class="flex flex-wrap space-x-1">
-              {p.stack.length > 0 &&
-                p.stack.map((s: string) => (
-                  <span class="px-2 mt-1 text-sm border-solid rounded-full text-zinc-800 bg-violet-300">
-                    {s}
-                  </span>
-                ))}
+        <li>
+          <a class="group" href={p.href}>
+            <div class="p-6 flex">
+              <div class="basis-1/5">
+                <img
+                  src={p.image}
+                  alt={p.name}
+                  loading="lazy"
+                  decoding="async"
+                  class="m-auto w-28 h-20 object-cover rounded-full bg-gradient-to-r from-blue-200 to-indigo-300"
+                />
+              </div>
+              <div class="basis-4/5">
+                <h3 class="font-semibold group-hover:text-emerald-600">
+                  {p.name}{" "}
+                  <span class="inline-block">
+                    <Icon name="newtab" class="stroke-orange-600 stroke-2" />
+                  </span>{" "}
+                </h3>
+                <div>
+                  <p class="mb-2 leading-6">{p.description}</p>
+                  <ul class="flex flex-wrap space-x-1">
+                    {p.stack.length > 0 &&
+                      p.stack.map((s: string) => (
+                        <li class="px-2 mt-1 text-sm border-solid rounded-full text-zinc-800 bg-violet-300">
+                          {s}
+                        </li>
+                      ))}
+                  </ul>
+                </div>
+              </div>
             </div>
-          </div>
+          </a>
         </li>
       ))
     }

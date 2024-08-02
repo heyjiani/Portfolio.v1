@@ -6,19 +6,22 @@ const experienceItems = [
     company: "Lighthouse Labs",
     title: "Software Developer",
     year: "May 2022 - Jun 2024",
+    href: "https://www.lighthouselabs.ca/",
     description:
-      "Hired upon bootcamp completion as one of the top three performing graduates. <br/><br/> <h4>CRM</h4>Contributed to and maintained the core CRM product as the sole developer on the project - by far the company's largest codebase. This product was built mainly in <span>Ruby on Rails</span>, with some <span>JavaScript</span> components and a <span>PostgreSQL</span> database. My work consisted of building out various features using <span>API & webhook integrations</span>, implementing event-driven architecture in our CRM to efficiently handle and process incoming data from services like Zoom, Mailchimp, and Typeform. <br /><br />Mentored a junior developer, getting them accustomed to regular code reviews and issue handling through GitHub.<br /><br /><h4>Front-End</h4>Redesigned and redeveloped several key components on the company's proprietary learning platform (Compass), from low-fidelity Figma sketches to completed UI, resulting in a more pleasant and intuitive User Experience. <br /><br />Co-maintained the frontend/website with a website manager, where I provided code-related guidance in their transition to RoR, as well as routine UI updates.",
+      "Hired upon bootcamp completion as one of the top three performing graduates. <br/><br/> <h4>CRM</h4>Contributed to and maintained the core CRM product as the sole developer on the project - the company's largest codebase. This product was built mainly in <span>Ruby on Rails</span>, with some <span>JavaScript</span> components and a <span>PostgreSQL</span> database. My work consisted of building out various features using <span>API & webhook integrations</span>, implementing event-driven architecture in our CRM to efficiently handle and process incoming data from services like Zoom, Mailchimp, and Typeform. <br /><br />Mentored a junior developer, getting them accustomed to regular code reviews and issue handling through GitHub.<br /><br /><h4>Front-End</h4>Redesigned and redeveloped several key components on the company's proprietary learning platform (Compass), from low-fidelity Figma sketches to completed UI, resulting in a more pleasant and intuitive User Experience. <br /><br />Co-maintained the frontend/website with a website manager, where I provided code-related guidance in their transition to RoR, as well as routine UI updates.",
   },
   {
-    company: "Lighthouse labs",
+    company: "Lighthouse Labs",
     title: "Web Development Diploma",
     year: "Jan 2022 - Apr 2022",
+    href: "https://www.lighthouselabs.ca/",
     description: "Completed the Web Development bootcamp at Lighthouse Labs.",
   },
   {
     company: "Stellar Creative Lab",
     title: "Storyboard Artist",
     year: "May 2021 - Dec 2021",
+    href: "https://www.stellarcreativelab.com/",
     description:
       "Senior-level position on a high-profile DreamWorks show. I used a combination of 2D and 3D softwares to create animation storyboards for monthly client review sessions, and incorporated feedback under tight TV production deadlines. I was commended for creating a guide to Blender, which significantly aided my team in adapting to the new software.",
   },
@@ -26,6 +29,7 @@ const experienceItems = [
     company: "Mainframe Studios, Atomic Cartoons",
     title: "Storyboard Artist",
     year: "2017 - May 2021",
+    href: "https://www.mainframe.ca/",
     description:
       "Promoted to senior-level artist within four months of starting at the junior level, due to fast learning ability and high adaptability to frequent style changes. Was one of the main artists on my team to lead with a transition from hand-drawn to 3D-generated backgrounds in storyboards, which resulted in a shorter production time. Notable clients include DreamWorks, Netflix, Mojang (Minecraft), Lego.",
   },
@@ -33,6 +37,7 @@ const experienceItems = [
     company: "Titmouse Inc.",
     title: "2D Animator, Digital Compositor",
     year: "2014 - 2017",
+    href: "https://titmouse.net/",
     description:
       "Worked on various animated shows for TV and streaming services. Responsibilities included scene reviews multiple times a week, reaching out to different teams regarding animation assets, and handling client notes within very demanding time constraints.",
   },
@@ -40,14 +45,19 @@ const experienceItems = [
     company: "Sheridan College",
     title: "Bachelor of Applied Arts (BAA) - Animation",
     year: "2014",
+    href: "https://www.sheridancollege.ca/",
     description: "",
   },
 ];
 ---
 
-<section id="experience" class="pb-10 scroll-mt-10">
-  <!-- <h2>Experience and Education</h2> -->
-  <ul class="flex flex-col">
+<section id="experience" class="pt-8 pb-10 scroll-mt-10">
+  <h2
+    class="mb-4 text-center text-2xl text-orange-600 font-extrabold tracking-widest"
+  >
+    Experience & Education
+  </h2>
+  <ul class="flex flex-col divide-y divide-dashed divide-blue-600">
     {
       experienceItems.map((exp) => (
         <Experience company={exp.company} title={exp.title} year={exp.year}>

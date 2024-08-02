@@ -1,5 +1,6 @@
 ---
-const { company, title, year } = Astro.props;
+import { Icon } from "astro-icon/components";
+const { company, title, href, year } = Astro.props;
 ---
 
 <li class="w-full p-3 mb-2 flex flex-row justify-between">
@@ -7,9 +8,18 @@ const { company, title, year } = Astro.props;
     <span class="leading-normal uppercase font-light text-xs">{year}</span>
   </div>
   <div class="basis-4/5">
-    <h3 class="font-semibold">
-      <span>{title}</span>
-      · <span class="italic"><a href="">{company}</a></span>
+    <h3>
+      <span class="font-bold text-blue-700">{title}</span>
+      <a
+        href={href}
+        target="_blank"
+        class="font-semibold italic hover:text-orange-600 cursor-pointer"
+      >
+        · {company}
+        <span class="inline-block">
+          <Icon name="newtab" class="stroke-orange-600 stroke-2" />
+        </span>
+      </a>
     </h3>
     <slot />
   </div>
