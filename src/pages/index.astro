@@ -3,17 +3,17 @@ import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
 import About from "../components/About.astro";
 import ExperienceList from "../components/ExperienceList.astro";
-import Projects from "../components/Projects.astro";
 import Contact from "../components/Contact.astro";
+import ProjectList from "../components/ProjectList.astro";
 ---
 
 <Layout>
-  <div class="flex flex-row my-7 mx-16 justify-evenly">
+  <div class="max-w-screen-xl flex flex-col lg:flex-row mx-auto justify-evenly">
     <Navigation />
-    <main class="basis-3/5 mb-10">
+    <main class="basis-3/5 mb-10 mt-20 lg:mt-7 mx-4 md:mx-10 lg:mx-0">
       <About />
       <ExperienceList />
-      <Projects />
+      <ProjectList />
       <Contact />
     </main>
   </div>

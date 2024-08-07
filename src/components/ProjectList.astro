@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon/components";
+import Project from "./Project.astro";
 const projects: {
   name: string;
   description: string;
@@ -18,17 +18,9 @@ const projects: {
     name: "Portfolio",
     description:
       "The page that you're on right now, developed to gain foundational knowledge and hands-on experience with Astro and TypeScript.",
-    image: "",
+    image: "/projects/portfolio.webp",
     href: "https://www.whereisjiani.com",
     stack: ["Astro", "TypeScript", "Tailwind"],
-  },
-  {
-    name: "Kintsugi",
-    description:
-      "A minimum viable demo for a therapy scheduling app with a multi-language voice transcriber twist.",
-    image: "",
-    href: "https://github.com/heyjiani/project-kintsugi",
-    stack: ["Astro", "TypeScript"],
   },
   {
     name: "Scheduler",
@@ -56,67 +48,38 @@ const projects: {
     stack: ["jQuery", "Express", "PostgreSQL", "CSS"],
   },
   {
+    name: "Kintsugi",
+    description:
+      "A minimum viable demo for a therapy scheduling app with a multi-language voice transcriber twist.",
+    image: "/projects/kintsugi.webp",
+    href: "https://github.com/heyjiani/project-kintsugi",
+    stack: ["Astro", "TypeScript"],
+  },
+  {
     name: "Jungle",
     description:
       "Intro to Ruby on Rails in the form of a challenge about adding features to an existing codebase for a simulated online retailer.",
-    image: "",
+    image: "/projects/jungle.webp",
     href: "https://github.com/heyjiani/jungle-rails",
     stack: ["Ruby on Rails", "RSpec"],
   },
   {
     name: "Tweeter",
     description: "Single-page Twitter clone.",
-    image: "",
+    image: "/projects/tweeter.webp",
     href: "https://github.com/heyjiani/tweeter",
     stack: ["jQuery", "Express", "CSS"],
   },
 ];
 ---
 
-<section id="projects" class="scroll-mt-10 pt-10">
+<section id="projects" class="pt-16 pb-5 scroll-mt-10">
   <h2
     class="mb-2 text-center text-2xl font-extrabold text-emerald-600 tracking-widest"
   >
     Projects
   </h2>
   <ul class="divide-y divide-dashed divide-blue-600">
-    {
-      projects.map((p) => (
-        <li>
-          <a class="group" href={p.href}>
-            <div class="p-6 flex">
-              <div class="basis-1/5">
-                <img
-                  src={p.image}
-                  alt={p.name}
-                  loading="lazy"
-                  decoding="async"
-                  class="m-auto w-28 h-20 object-cover rounded-full bg-gradient-to-r from-blue-200 to-indigo-300"
-                />
-              </div>
-              <div class="basis-4/5">
-                <h3 class="font-semibold group-hover:text-emerald-600">
-                  {p.name}{" "}
-                  <span class="inline-block">
-                    <Icon name="newtab" class="stroke-orange-600 stroke-2" />
-                  </span>{" "}
-                </h3>
-                <div>
-                  <p class="mb-2 leading-6">{p.description}</p>
-                  <ul class="flex flex-wrap space-x-1">
-                    {p.stack.length > 0 &&
-                      p.stack.map((s: string) => (
-                        <li class="px-2 mt-1 text-sm border-solid rounded-full text-zinc-800 bg-violet-300">
-                          {s}
-                        </li>
-                      ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </a>
-        </li>
-      ))
-    }
+    {projects.map((p) => <Project project={p} />)}
   </ul>
 </section>

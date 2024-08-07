@@ -1,15 +1,43 @@
 ---
+import { Icon } from "astro-icon/components";
 const {
-  project: { name, description, image, stack },
+  project: { name, description, image, href, stack },
 } = Astro.props;
 ---
 
-<div>
-  <h3>{name}</h3>
-  <div>
-    <p>{description}</p>
-    <p>
-      Built with <span>{stack.length > 0 && stack.map((s: string) => s)}</span>
-    </p>
-  </div>
-</div>
+<li class="p-3">
+  <a class="group" href={href}>
+    <div class="py-6 lg:px-6 flex flex-col-reverse md:flex-row">
+      <div class="basis-1/5">
+        <img
+          src={image || "/projects/default.webp"}
+          alt={name}
+          loading="lazy"
+          decoding="async"
+          class="mt-4 md:m-auto w-36 md:w-28 h-20 object-cover rounded-sm bg-gradient-to-r from-blue-200 to-indigo-300 shadow-[3px_3px_5px_rgba(0,0,0,0.3)] brightness-95"
+        />
+      </div>
+      <div class="basis-4/5 md:ml-6">
+        <h3 class="font-semibold group-hover:text-emerald-600">
+          {name}{" "}
+          <span class="inline-block">
+            <Icon name="newtab" class="stroke-orange-600 stroke-2" />
+          </span>{" "}
+        </h3>
+        <div>
+          <p class="mb-2 leading-6">{description}</p>
+          <ul class="flex flex-wrap space-x-1">
+            {
+              stack.length > 0 &&
+                stack.map((s: string) => (
+                  <li class="px-2 mt-1 text-sm border-solid rounded-full text-zinc-800 bg-violet-300">
+                    {s}
+                  </li>
+                ))
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </a>
+</li>
