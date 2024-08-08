@@ -5,7 +5,7 @@ const {
 } = Astro.props;
 ---
 
-<li class="p-3">
+<li class="p-3 transition hover:bg-stone-300/30 duration:250">
   <a class="group" href={href}>
     <div class="py-6 lg:px-6 flex flex-col-reverse md:flex-row">
       <div class="basis-1/5">
@@ -14,11 +14,11 @@ const {
           alt={name}
           loading="lazy"
           decoding="async"
-          class="mt-4 md:m-auto w-36 md:w-28 h-20 object-cover rounded-sm bg-gradient-to-r from-blue-200 to-indigo-300 shadow-[3px_3px_5px_rgba(0,0,0,0.3)] brightness-95"
+          class="mt-4 md:m-auto w-36 md:w-28 h-20 object-cover rounded-sm bg-gradient-to-r from-blue-200 to-indigo-300 shadow-[3px_3px_5px_rgba(0,0,0,0.3)] brightness-95 transition group-hover:scale-105 duration:250"
         />
       </div>
       <div class="basis-4/5 md:ml-6">
-        <h3 class="font-semibold group-hover:text-emerald-600">
+        <h3 class="font-semibold group-hover:text-emerald-700">
           {name}{" "}
           <span class="inline-block">
             <Icon name="newtab" class="stroke-orange-600 stroke-2" />
