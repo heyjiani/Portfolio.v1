@@ -8,9 +8,13 @@ import ProjectList from "../components/ProjectList.astro";
 ---
 
 <Layout>
-  <div class="max-w-screen-xl flex flex-col lg:flex-row mx-auto justify-evenly">
+  <div
+    class="layout-container max-w-screen-xl flex flex-col lg:flex-row mx-auto justify-evenly"
+  >
     <Navigation />
-    <main class="basis-3/5 mb-10 md:mt-20 lg:mt-7 mx-4 md:mx-10 lg:mx-0">
+    <main
+      class="basis-3/5 mb-10 md:mt-20 lg:mt-7 mx-4 md:mx-10 lg:mx-0 background"
+    >
       <About />
       <ExperienceList />
       <ProjectList />
@@ -18,3 +22,8 @@ import ProjectList from "../components/ProjectList.astro";
     </main>
   </div>
 </Layout>
+
+<style>
+  .layout-container {
+  }
+</style>

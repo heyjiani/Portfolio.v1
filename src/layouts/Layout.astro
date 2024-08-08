@@ -19,27 +19,39 @@ import "@fontsource-variable/inter";
   </body>
 </html>
 <style is:global>
-  /* :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      rgb(var(--accent-light)) 30%,
-      white 60%
-    );
-  } */
   html {
     font-family: system-ui, sans-serif;
   }
   body {
-    background-size: 40px 40px;
-    background-image: radial-gradient(
-      circle,
-      #7dafe9 1px,
-      rgba(0, 0, 0, 0) 1px
-    );
-    background-attachment: fixed;
+    background-image: radial-gradient(circle, #7dafe9 1px, rgba(0, 0, 0, 0) 1px),
+      url(mountains.svg);
+    background-attachment: fixed, local;
+    background-size:
+      40px 40px,
+      70%;
+    background-repeat: repeat, no-repeat;
+    background-position:
+      0 0,
+      bottom -40px right -120px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    body {
+      background-size:
+        40px 40px,
+        150%;
+      background-position:
+        0 0,
+        bottom -10px right -350px;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    body {
+      background-size:
+        40px 40px,
+        160%;
+      background-position:
+        0 0,
+        bottom -10px right -200px;
+    }
   }
 </style>
