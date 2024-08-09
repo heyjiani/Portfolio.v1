@@ -1,6 +1,8 @@
 ---
 import { Icon } from "astro-icon/components";
-const { company, title, href, year } = Astro.props;
+const {
+  experienceItem: { company, title, href, year },
+} = Astro.props;
 ---
 
 <li class="w-full py-3 px-2 md:p-3 mb-2 flex flex-row justify-between">
@@ -13,6 +15,8 @@ const { company, title, href, year } = Astro.props;
       <a
         href={href}
         target="_blank"
+        aria-label=`${title} at ${company} (opens in new tab)`
+        rel="noreferrer noopener"
         class="font-semibold italic hover:text-orange-600 cursor-pointer"
       >
         · {company}

@@ -6,7 +6,12 @@ const {
 ---
 
 <li class="p-3 transition hover:bg-stone-300/30 duration:250">
-  <a class="group" href={href}>
+  <a
+    class="group"
+    href={href}
+    aria-label=`${name} (opens in new tab)`
+    rel="noreferrer noopener"
+  >
     <div class="py-6 lg:px-6 flex flex-col-reverse md:flex-row">
       <div class="basis-1/5">
         <img

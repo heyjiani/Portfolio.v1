@@ -60,7 +60,7 @@ const experienceItems = [
   <ul class="flex flex-col divide-y divide-dashed divide-blue-600">
     {
       experienceItems.map((exp) => (
-        <Experience company={exp.company} title={exp.title} year={exp.year}>
+        <Experience experienceItem={exp}>
           <p set:html={exp.description} />
         </Experience>
       ))
